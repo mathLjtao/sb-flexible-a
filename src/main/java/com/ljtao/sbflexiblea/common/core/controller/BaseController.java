@@ -1,7 +1,9 @@
 package com.ljtao.sbflexiblea.common.core.controller;
 
+import com.github.pagehelper.PageInfo;
 import com.ljtao.sbflexiblea.common.core.domain.AjaxResult;
 import com.ljtao.sbflexiblea.common.core.domain.AjaxResult.Type;
+import com.ljtao.sbflexiblea.common.core.page.TableDataInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.WebDataBinder;
@@ -87,5 +89,12 @@ public class BaseController
         return new AjaxResult(type, message);
     }
 
+    public TableDataInfo getDataTable(List<?> list){
+        TableDataInfo resData=new TableDataInfo();
+        resData.setCode(0);
+        resData.setRows(list);
+        resData.setTotal(new PageInfo(list).getTotal());
+        return resData;
+    }
 
 }

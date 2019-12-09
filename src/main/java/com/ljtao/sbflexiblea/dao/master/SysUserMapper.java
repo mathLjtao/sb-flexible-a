@@ -9,4 +9,5 @@ import java.util.List;
 
 public interface SysUserMapper {
     public List<SysUser> selectUserList(@Param("user") SysUser user,@Param("params") Params params);
+    public int selectUserListCount(@Param("user") SysUser user,@Param("params") Params params);
 }

@@ -1,5 +1,7 @@
 package com.ljtao.sbflexiblea.web.controller;
 
+import com.github.pagehelper.PageInfo;
+import com.ljtao.sbflexiblea.common.core.controller.BaseController;
 import com.ljtao.sbflexiblea.common.core.domain.AjaxResult;
 import com.ljtao.sbflexiblea.common.core.page.TableDataInfo;
 import com.ljtao.sbflexiblea.domian.Params;
@@ -18,7 +20,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/system/user")
-public class UserController {
+public class UserController extends BaseController {
     private String prefix="system/user";
     @Autowired
     private SysDictDataService dictDataService;
@@ -34,6 +36,10 @@ public class UserController {
     @ResponseBody
     public TableDataInfo list(SysUser sysUser, SysDept sysDept, Params params){
         List<SysUser> sysUsers = userService.selectUserList(sysUser, params);
-        return null;
+        TableDataInfo resData=new TableDataInfo();
+        resData.setCode(0);
+        resData.setRows(sysUsers);
+        resData.setTotal(userService.selectUserListCount(sysUser,params));
+        return resData;
     }
 }
