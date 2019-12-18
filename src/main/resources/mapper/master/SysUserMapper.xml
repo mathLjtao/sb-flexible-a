@@ -78,6 +78,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<if test="user.deptId != null and user.deptId != 0">
 			AND (u.dept_id = #{user.deptId} OR u.dept_id IN ( SELECT t.dept_id FROM sys_dept t WHERE FIND_IN_SET (#{user.deptId},ancestors) ))
 		</if>
+
+         ORDER BY ${params.orderByColumn}  ${params.isAsc}
 		limit #{params.offset},#{params.pageSize}
 	</select>
 
