@@ -9,6 +9,7 @@ import com.ljtao.sbflexiblea.domian.master.SysDictData;
 import com.ljtao.sbflexiblea.service.master.SysDeptService;
 import com.ljtao.sbflexiblea.service.master.SysDictDataService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
