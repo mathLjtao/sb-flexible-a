@@ -8,6 +8,7 @@ import com.ljtao.sbflexiblea.domian.master.SysDept;
 import com.ljtao.sbflexiblea.domian.master.SysDictData;
 import com.ljtao.sbflexiblea.service.master.SysDeptService;
 import com.ljtao.sbflexiblea.service.master.SysDictDataService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
