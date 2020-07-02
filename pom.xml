@@ -34,7 +34,7 @@
         <commons.fileupload.version>1.3.3</commons.fileupload.version>
         <poi.version>3.17</poi.version>
         <velocity.version>1.7</velocity.version>
-        <mysql-connector>5.1.39</mysql-connector>
+        <mysql-connector>8.0.16</mysql-connector>
     </properties>
 
     <dependencies>
